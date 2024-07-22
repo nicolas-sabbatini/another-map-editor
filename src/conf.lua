@@ -1,8 +1,8 @@
 function love.conf(t)
-	t.identity = "map-maker" -- The name of the save directory (string)
+	t.identity = "another-map-editor" -- The name of the save directory (string)
 	t.version = "11.5" -- The LÖVE version this game was made for (string)
 
-	t.window.title = "Map Maker" -- The window title (string)
+	t.window.title = "Another Map Editor" -- The window title (string)
 	--    t.window.icon = TODO                 -- Filepath to an image to use as the window's icon (string)
 	t.window.width = 800 -- The window width (number)
 	t.window.height = 608 -- The window height (number)
