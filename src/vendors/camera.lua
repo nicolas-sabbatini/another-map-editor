@@ -157,6 +157,7 @@ function camera:cameraCoords(x, y, ox, oy, w, h)
 end
 
 -- camera coordinates to world coordinates
+--- Screen to camera
 function camera:worldCoords(x, y, ox, oy, w, h)
 	ox, oy = ox or 0, oy or 0
 	w, h = w or love.graphics.getWidth(), h or love.graphics.getHeight()
