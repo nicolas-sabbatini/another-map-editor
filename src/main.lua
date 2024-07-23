@@ -5,7 +5,9 @@ local side_bar = require("side_bar")
 
 -- Callback on actions
 function love.mousepressed(x, y, button) end
-function love.mousemoved(x, y, dx, dy) end
+function love.mousemoved(x, y, dx, dy)
+	work_area:handle_mouse_movement(x, y)
+end
 function love.mousereleased(x, y, button) end
 function love.textinput(text) end
 function love.keypressed(k, scancode, isrepeat) end
