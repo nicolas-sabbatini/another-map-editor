@@ -1,3 +1,3 @@
 # Map maker!
 
-A simple map maker for love 2d
+This is another map editor made in love 2d for games made in love 2d
