@@ -7,7 +7,7 @@ local work_area = {
 	background = require("work_area/background"),
 }
 
----@param zoom number
+---@param zoom number | love.Scancode
 ---@param tile_size number
 ---@param tile_amount number
 function work_area:init(zoom, tile_size, tile_amount)
@@ -25,8 +25,15 @@ function work_area:build_transform()
 	self.background:tile_rectangle(top_left_x, top_left_y, top_right_x, bottom_left_y)
 end
 
----@param dt number
-function work_area:update(dt) end
+function work_area:handle_scrool(x_scrol, y_scrol)
+	if KEYBOARD:isDown("lctrl") then
+		local new_zoom = math.max(self.camera.scale + (y_scrol * 0.1), 0.1)
+		self.camera:zoomTo(new_zoom)
+	else
+		self.camera:move(2 * x_scrol, 2 * -y_scrol)
+	end
+	work_area:build_transform()
+end
 
 function work_area:draw()
 	if not self.background:can_draw() then

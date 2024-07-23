@@ -59,7 +59,6 @@ PALETTE = {
 }
 
 -- Keyboard
-KEYBOARD = require("vendors.simple_keyboard")
-KEYBOARD:keyBind({
+KEYBOARD = require("vendors.simple_keyboard").createInstance({
 	"lctrl",
 })

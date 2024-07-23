@@ -9,8 +9,8 @@ function love.mousemoved(x, y, dx, dy) end
 function love.mousereleased(x, y, button) end
 function love.textinput(text) end
 function love.keypressed(k, scancode, isrepeat) end
-function love.wheelmoved(x, y)
-	print(x, y)
+function love.wheelmoved(x_scrol, y_scrol)
+	work_area:handle_scrool(x_scrol, y_scrol)
 end
 function love.resize(new_width, new_height)
 	WINDOW_WIDTH = new_width
@@ -29,7 +29,7 @@ function love.load()
 end
 
 function love.update(dt)
-	work_area:update(dt)
+	KEYBOARD:updateInput()
 end
 
 function love.draw()
