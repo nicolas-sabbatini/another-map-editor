@@ -1,7 +1,8 @@
 require("globals")
 
-local work_area = require("work_area/work_area")
+local work_area = require("work_area")
 local side_bar = require("side_bar")
+local gui = require("gui")
 
 -- Callback on actions
 function love.mousepressed(x, y, button) end
@@ -28,6 +29,7 @@ function love.load()
 	love.graphics.setDefaultFilter("nearest", "nearest")
 	side_bar:load()
 	work_area:init(3.0, 16, 32)
+	gui:init()
 end
 
 function love.update(dt)
@@ -37,4 +39,5 @@ end
 function love.draw()
 	love.graphics.clear(1, 1, 1)
 	work_area:draw()
+	gui:draw()
 end
